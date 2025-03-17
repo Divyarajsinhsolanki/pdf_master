@@ -8,6 +8,33 @@ module PdfModifier
 
   class Modifier
 
+    def self.add_blank_page(input_pdf, output_pdf, position = :end)
+      pdf = CombinePDF.load(input_pdf)
+
+      blank_pdf_path = "blank_page.pdf"
+      Prawn::Document.generate(blank_pdf_path, page_size: "A4") {}
+
+      blank_page = CombinePDF.load(blank_pdf_path).pages[0]
+
+      case position
+      when :beginning
+        pdf.pages.unshift(blank_page)
+      when :end
+        pdf.pages << blank_page
+      when Integer
+        if position.between?(1, pdf.pages.count + 1)
+          pdf.pages.insert(position - 1, blank_page)
+        else
+          raise ArgumentError, "Invalid position: #{position}"
+        end
+      else
+        raise ArgumentError, "Invalid position: Use :beginning, :end, or a page number."
+      end
+
+      pdf.save(output_pdf)
+      File.delete(blank_pdf_path) if File.exist?(blank_pdf_path)
+    end
+
     # Remove a specific page from a PDF
     def self.remove_page(input_pdf, output_pdf, page_number)
       pdf = CombinePDF.load(input_pdf)
@@ -55,33 +82,6 @@ module PdfModifier
         new_pdf << page
         new_pdf.save("#{output_folder}/page_#{index + 1}.pdf")
       end
-    end
-
-    def self.add_blank_page(input_pdf, output_pdf, position = :end)
-      pdf = CombinePDF.load(input_pdf)
-
-      blank_pdf_path = "blank_page.pdf"
-      Prawn::Document.generate(blank_pdf_path, page_size: "A4") {}
-
-      blank_page = CombinePDF.load(blank_pdf_path).pages[0]
-
-      case position
-      when :beginning
-        pdf.pages.unshift(blank_page)
-      when :end
-        pdf.pages << blank_page
-      when Integer
-        if position.between?(1, pdf.pages.count + 1)
-          pdf.pages.insert(position - 1, blank_page)
-        else
-          raise ArgumentError, "Invalid position: #{position}"
-        end
-      else
-        raise ArgumentError, "Invalid position: Use :beginning, :end, or a page number."
-      end
-
-      pdf.save(output_pdf)
-      File.delete(blank_pdf_path) if File.exist?(blank_pdf_path)
     end
   end
 end
