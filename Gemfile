@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in my_gem.gemspec
+# Specify your gem's dependencies in pdf_modifier.gemspec
 gemspec
 
 gem "rake", "~> 13.0"
