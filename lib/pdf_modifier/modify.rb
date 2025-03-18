@@ -6,7 +6,7 @@ module PdfModifier
   # ✅ merge_pdfs(output_pdf, *input_pdfs): Merge multiple PDFs into one.
   # ✅ reorder_pages(input_pdf, output_pdf, new_order): Reorder pages in a custom order.
 
-  class Modifier
+  class Modify
 
     def self.add_blank_page(input_pdf, output_pdf, position = :end)
       pdf = CombinePDF.load(input_pdf)
