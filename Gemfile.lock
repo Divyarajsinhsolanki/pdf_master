@@ -3,24 +3,42 @@ PATH
   specs:
     pdf_modifier (0.1.0)
       combine_pdf (~> 1.0)
+      hexapdf (~> 0.30)
+      pdf-reader (~> 2.9)
       prawn (~> 2.4)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (2.0.1)
+    afm (0.2.2)
     ast (2.4.2)
     bigdecimal (3.1.9)
+    cmdparse (3.0.7)
     combine_pdf (1.0.29)
       matrix
       ruby-rc4 (>= 0.1.5)
+    geom2d (0.4.1)
+    hashery (2.1.2)
+    hexapdf (0.47.0)
+      cmdparse (~> 3.0, >= 3.0.3)
+      geom2d (~> 0.4, >= 0.4.1)
+      openssl (>= 2.2.1)
     json (2.10.1)
     language_server-protocol (3.17.0.4)
     matrix (0.4.2)
+    openssl (3.3.0)
     parallel (1.26.3)
     parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
     pdf-core (0.10.0)
+    pdf-reader (2.14.1)
+      Ascii85 (>= 1.0, < 3.0, != 2.0.0)
+      afm (~> 0.2.1)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
     prawn (2.5.0)
       matrix (~> 0.4)
       pdf-core (~> 0.10.0)

@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "prawn", "~> 2.4"
   spec.add_dependency "combine_pdf", "~> 1.0"
   spec.add_dependency "pdf-reader", "~> 2.9"
-
+  spec.add_dependency "hexapdf", "~> 0.30"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 

@@ -1,32 +1,26 @@
 module PdfModifier
-  # ✅ add_page(input_pdf, position = :end): Insert a blank page at a specific position.
-  # ✅ remove_page(input_pdf, page_number): Remove a specific page.
-  # ✅ rotate_page(input_pdf, page_number, degrees): Rotate a specific page.
-  # ✅ split_pdf(input_pdf, output_folder): Split a PDF into individual pages.
-  # ✅ merge_pdfs(*input_pdfs): Merge multiple PDFs into one.
-  # ✅ reorder_pages(input_pdf, new_order): Reorder pages in a custom order.
+  require_relative 'logger'
 
   class Modify
     class << self
       attr_accessor :pdf, :pdf_pages
 
-      # Load PDF and initialize instance variables
       def load_pdf(input_pdf)
         @pdf = CombinePDF.load(input_pdf)
         @pdf_pages = @pdf.pages
       end
-      # ✅ Save PDF (overwrites input file)
+
       def save_pdf(output_pdf)
         @pdf.save(output_pdf)
       end
 
-      # ✅ Add a blank page at a specific page_number
       def add_page(input_pdf, page_number)
+        Logger.log("Adding blank page to #{input_pdf} at position #{page_number}")
         load_pdf(input_pdf)
 
         blank_page = CombinePDF.parse(Prawn::Document.new { |pdf| pdf.start_new_page }.render).pages[0]
         new_pdf = CombinePDF.new
-
+        page_number = page_number&.to_i
         if !(page_number.to_i.between?(1, @pdf_pages.count + 1))
           @pdf.pages.each { |page| new_pdf << page }
           new_pdf << blank_page
@@ -36,34 +30,42 @@ module PdfModifier
             new_pdf << blank_page if index == page_number - 1
             new_pdf << page
           end
-          # If adding at the last position, ensure the blank page is added
           new_pdf << blank_page if page_number == @pdf_pages.count + 1
         end
-      
+
         @pdf = new_pdf
         save_pdf(input_pdf)
+
+        Logger.log("Blank page added successfully.")
+      rescue => e
+        Logger.log("Error adding page: #{e.message}")
+        raise
       end
 
-      # ✅ Remove a specific page
       def remove_page(input_pdf, page_number)
+        Logger.log("Removing page #{page_number} from #{input_pdf}")
         load_pdf(input_pdf)
-      
+
         if (page_number = page_number&.to_i) && page_number.between?(1, @pdf.pages.count)
           new_pdf = CombinePDF.new
           @pdf.pages.each_with_index do |page, index|
             new_pdf << page unless index == (page_number - 1)
           end
-      
-          @pdf = new_pdf # ✅ Reassign to the modified PDF
+
+          @pdf = new_pdf
           save_pdf(input_pdf)
+
+          Logger.log("Page #{page_number} removed successfully.")
         else
           raise ArgumentError, "Invalid page number: #{page_number}"
         end
+      rescue => e
+        Logger.log("Error removing page: #{e.message}")
+        raise
       end
 
-      # ✅ Merge multiple PDFs into one
       def merge_pdfs(output_pdf, *input_pdfs)
-        raise ArgumentError, "No PDFs provided for merging" if input_pdfs.empty?
+        Logger.log("Merging PDFs into #{output_pdf}: #{input_pdfs.join(', ')}")
 
         combined_pdf = CombinePDF.new
         input_pdfs.each do |file|
@@ -72,10 +74,14 @@ module PdfModifier
         end
 
         combined_pdf.save(output_pdf)
+        Logger.log("PDFs merged successfully.")
+      rescue => e
+        Logger.log("Error merging PDFs: #{e.message}")
+        raise
       end
 
-      # ✅ Extract specific pages into a new PDF
       def extract_pages(input_pdf, output_pdf, *page_numbers)
+        Logger.log("Extracting pages #{page_numbers} from #{input_pdf} to #{output_pdf}")
         load_pdf(input_pdf)
 
         new_pdf = CombinePDF.new
@@ -88,33 +94,50 @@ module PdfModifier
         end
 
         new_pdf.save(output_pdf)
+        Logger.log("Pages extracted successfully.")
+      rescue => e
+        Logger.log("Error extracting pages: #{e.message}")
+        raise
       end
 
-      # ✅ Rotate a specific page
       def rotate_page(input_pdf, page_number, degrees)
+        Logger.log("Rotating page #{page_number} of #{input_pdf} by #{degrees} degrees")
         load_pdf(input_pdf)
-      
+
         if page_number.between?(1, @pdf_pages.count)
-          @pdf_pages[page_number - 1][:Rotate] = degrees
+          current_rotation = @pdf_pages[page_number - 1][:Rotate].to_i
+          @pdf_pages[page_number - 1][:Rotate] = (current_rotation + degrees) % 360
           save_pdf(input_pdf)
+
+          Logger.log("Page rotated successfully.")
         else
           raise ArgumentError, "Invalid page number: #{page_number}"
         end
+      rescue => e
+        Logger.log("Error rotating page: #{e.message}")
+        raise
       end
 
-      # ✅ Split a PDF into separate pages
       def split_pdf(input_pdf, output_folder)
+        Logger.log("Splitting #{input_pdf} into separate pages at #{output_folder}")
         load_pdf(input_pdf)
+
         raise ArgumentError, "Output folder does not exist: #{output_folder}" unless Dir.exist?(output_folder)
 
         @pdf_pages.each_with_index do |page, index|
           new_pdf = CombinePDF.new << page
-          new_pdf.save(File.join(output_folder, "page_#{index + 1}.pdf"))
+          output_path = File.join(output_folder, "page_#{index + 1}.pdf")
+          new_pdf.save(output_path)
         end
+
+        Logger.log("PDF split successfully.")
+      rescue => e
+        Logger.log("Error splitting PDF: #{e.message}")
+        raise
       end
 
-      # ✅ Reorder pages in a custom order
       def reorder_pages(input_pdf, output_pdf, new_order)
+        Logger.log("Reordering pages in #{input_pdf} with new order: #{new_order}")
         load_pdf(input_pdf)
 
         if new_order.sort != (1..@pdf_pages.count).to_a
@@ -125,6 +148,32 @@ module PdfModifier
         new_order.each { |i| reordered_pdf << @pdf_pages[i - 1] }
 
         reordered_pdf.save(output_pdf)
+        Logger.log("Pages reordered successfully.")
+      rescue => e
+        Logger.log("Error reordering pages: #{e.message}")
+        raise
+      end
+
+      def duplicate_page(input_pdf, page_number)
+        Logger.log("Duplicating page #{page_number} of #{input_pdf}")
+        
+        doc = HexaPDF::Document.open(input_pdf)
+        page_index = page_number - 1
+        original_page = doc.pages[page_index]
+
+        raise ArgumentError, "Page number #{page_number} does not exist." if original_page.nil?
+
+        new_page = doc.pages.add
+        new_page[:Contents] = original_page[:Contents].dup
+        new_page[:Resources] = original_page[:Resources].dup
+        new_page.box(:media)
+
+        doc.write(input_pdf, optimize: true)
+        
+        Logger.log("Page duplicated successfully.")
+      rescue => e
+        Logger.log("Error duplicating page: #{e.message}")
+        raise
       end
     end
   end

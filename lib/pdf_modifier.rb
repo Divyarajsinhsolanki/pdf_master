@@ -1,3 +1,4 @@
+require "hexapdf"
 require "combine_pdf"
 require "prawn"
 require "pdf-reader"
@@ -9,7 +10,12 @@ module PdfModifier
   require_relative "pdf_modifier/reader"
   require_relative "pdf_modifier/security"
 
-  def self.method_missing(method_name, *args, **kwargs, &block)
+  require_relative 'pdf_modifier/logger'
+  require_relative 'pdf_modifier/errors'
+
+  include PdfModifier::Errors
+
+def self.method_missing(method_name, *args, **kwargs, &block)
     Validator.validate_pdf(args.first) if args.any?
 
     # Delegate the call to appropriate class

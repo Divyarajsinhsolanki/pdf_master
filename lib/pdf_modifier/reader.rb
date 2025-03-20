@@ -1,10 +1,4 @@
 module PdfModifier
-  # ✅ page_count(input_pdf): Get the total number of pages.
-  # ✅ extract_text(input_pdf): Extract text from all pages.
-  # ✅ extract_metadata(input_pdf): Extract metadata (title, author, creation date, etc.).
-  # ✅ get_dimensions(input_pdf): Get PDF page width & height.
-  # ✅ list_fonts(input_pdf): Get a list of all fonts used in the PDF.
-  # ✅ list_annotations(input_pdf): Extract annotations and comments from PDF pages.
 
   class Reader
     class << self

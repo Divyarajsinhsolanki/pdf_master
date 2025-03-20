@@ -1,8 +1,5 @@
 module PdfModifier
-  # ✅ add_text(input_pdf, text, x, y, page_number): Insert text at a specific position.
-  # ✅ add_watermark(input_pdf, watermark_text): Apply a watermark.
-  # ✅ add_signature(input_pdf, signature_image, x, y, page_number): Add a signature image.
-  # ✅ redact_text(input_pdf, text_to_remove): Find and remove sensitive text.
+  require_relative 'logger'
 
   class Editor
     class << self
@@ -14,8 +11,9 @@ module PdfModifier
 
       # Add text to a specific position in a PDF
       def add_text(input_pdf, text, x, y, page_number)
+        Logger.log("Adding text to page #{page_number} at position (#{x}, #{y})")
+        
         pdf = CombinePDF.load(input_pdf)
-
         return unless page_number.between?(1, pdf.pages.count)
 
         temp_pdf = "temp_overlay.pdf"
@@ -27,10 +25,17 @@ module PdfModifier
 
         pdf.save(input_pdf)
         cleanup_temp_file(temp_pdf)
+
+        Logger.log("Text added successfully to page #{page_number}.")
+      rescue => e
+        Logger.log("Error adding text: #{e.message}")
+        raise
       end
 
       # Add a watermark to each page in a PDF
       def add_watermark(input_pdf, watermark_text, options = {})
+        Logger.log("Adding watermark: '#{watermark_text}'")
+
         options = { size: 50, rotate: 45, opacity: 0.3 }.merge(options)
         temp_pdf = "temp_watermark.pdf"
 
@@ -47,10 +52,17 @@ module PdfModifier
 
         pdf.save(input_pdf)
         cleanup_temp_file(temp_pdf)
+
+        Logger.log("Watermark added successfully.")
+      rescue => e
+        Logger.log("Error adding watermark: #{e.message}")
+        raise
       end
 
       # Add a signature image to a specific position in a PDF
       def add_signature(input_pdf, signature_image, x, y, page_number)
+        Logger.log("Adding signature to page #{page_number} at position (#{x}, #{y})")
+
         raise ArgumentError, "Signature image file not found." unless File.exist?(signature_image)
 
         pdf = CombinePDF.load(input_pdf)
@@ -66,16 +78,32 @@ module PdfModifier
 
         pdf.save(input_pdf)
         cleanup_temp_file(temp_pdf)
+
+        Logger.log("Signature added successfully to page #{page_number}.")
+      rescue => e
+        Logger.log("Error adding signature: #{e.message}")
+        raise
       end
 
       # Redact specified text from the PDF
-      def redact_text(input_pdf, text_to_remove)
-        reader = PDF::Reader.new(input_pdf)
+      def replace_text(input_pdf, text_to_remove)
+        Logger.log("Redacting text: '#{text_to_remove}' from #{input_pdf}")
 
-        content = reader.pages.map(&:text).join("\n")
-        updated_content = content.gsub(text_to_remove, "[REDACTED]")
+        doc = HexaPDF::Document.open(input_pdf)
 
-        File.open(input_pdf, "w") { |f| f.write(updated_content) }
+        doc.pages.each do |page|
+          next unless page.contents
+          content = page.contents
+          content = content.gsub(text_to_remove, "Divyaraj") if content.is_a?(String)
+          page[:Contents] = doc.add({Filter: :FlateDecode}, stream: content)
+        end
+
+        doc.write(input_pdf, optimize: true)
+        
+        Logger.log("Text redacted successfully.")
+      rescue => e
+        Logger.log("Error redacting text: #{e.message}")
+        raise
       end
     end
   end
