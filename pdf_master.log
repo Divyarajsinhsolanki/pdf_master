@@ -1,0 +1,388 @@
+# Logfile created on 2025-03-26 12:00:32 +0530 by logger.rb/56815
+I, [2025-03-26T12:00:32.295301 #105036]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:00:32.321399 #105036]  INFO -- : Text added successfully.
+I, [2025-03-26T12:00:32.321902 #105036]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:00:32.325741 #105036]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:00:32.326069 #105036]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:00:32.330814 #105036]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:00:32.331051 #105036]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:00:32.349905 #105036]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:00:32.350376 #105036]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:00:32.353618 #105036]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:00:32.353999 #105036]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:00:32.380325 #105036]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:00:32.383801 #105036]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:00:32.384095 #105036]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:00:32.387281 #105036]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:00:32.387699 #105036]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:00:32.389018 #105036]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:00:32.389381 #105036]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:00:32.390610 #105036]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:00:32.390850 #105036]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:00:32.423738 #105036]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:00:32.424111 #105036]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:00:32.426665 #105036]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:00:32.426916 #105036]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:00:32.427242 #105036]  INFO -- : Error splitting PDF: Split page 2 is out of range. Total pages: 2
+I, [2025-03-26T12:00:32.427722 #105036]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:00:32.428845 #105036]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:00:32.429127 #105036]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:00:32.430449 #105036]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:00:32.430727 #105036]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:00:32.431706 #105036]  INFO -- : Error encrypting PDF: undefined method `security' for #<HexaPDF::Document:0x0055f0ce1e2d90>
+I, [2025-03-26T12:00:32.432681 #105036]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:00:32.433625 #105036]  INFO -- : Error replacing text: undefined method `text' for #<HexaPDF::Type::Page:0x0055f0ce1a1868>
+I, [2025-03-26T12:00:32.434163 #105036]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:00:32.443755 #105036]  INFO -- : Error converting PDF to images: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+I, [2025-03-26T12:04:42.566765 #109011]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:04:42.584541 #109011]  INFO -- : Text added successfully.
+I, [2025-03-26T12:04:42.585173 #109011]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:04:42.589486 #109011]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:04:42.589934 #109011]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:04:42.593291 #109011]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:04:42.593715 #109011]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:04:42.611574 #109011]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:04:42.612041 #109011]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:04:42.614986 #109011]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:04:42.615307 #109011]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:04:42.635248 #109011]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:04:42.638856 #109011]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:04:42.639462 #109011]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:04:42.643291 #109011]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:04:42.643657 #109011]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:04:42.644712 #109011]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:04:42.645009 #109011]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:04:42.646248 #109011]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:04:42.646531 #109011]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:04:42.657797 #109011]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:04:42.658183 #109011]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:04:42.660238 #109011]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:04:42.660535 #109011]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:04:42.660977 #109011]  INFO -- : Error splitting PDF: Split page 2 is out of range. Total pages: 2
+I, [2025-03-26T12:04:42.661722 #109011]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:04:42.663754 #109011]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:04:42.664165 #109011]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:04:42.665562 #109011]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:04:42.665818 #109011]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:04:42.666884 #109011]  INFO -- : Error encrypting PDF: undefined method `security' for #<HexaPDF::Document:0x005609bfaa1e90>
+I, [2025-03-26T12:04:42.668523 #109011]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:04:42.669471 #109011]  INFO -- : Error replacing text: undefined method `text' for #<HexaPDF::Type::Page:0x005609c035d610>
+I, [2025-03-26T12:04:42.670230 #109011]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:04:42.671497 #109011]  INFO -- : Error converting PDF to images: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+I, [2025-03-26T12:06:55.576188 #110516]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:06:55.599429 #110516]  INFO -- : Text added successfully.
+I, [2025-03-26T12:06:55.600129 #110516]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:06:55.603874 #110516]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:06:55.604207 #110516]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:06:55.607542 #110516]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:06:55.607827 #110516]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:06:55.624817 #110516]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:06:55.625225 #110516]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:06:55.628239 #110516]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:06:55.628669 #110516]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:06:55.648861 #110516]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:06:55.652480 #110516]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:06:55.652862 #110516]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:06:55.655391 #110516]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:06:55.655689 #110516]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:06:55.656788 #110516]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:06:55.657173 #110516]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:06:55.658386 #110516]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:06:55.658669 #110516]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:06:55.671408 #110516]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:06:55.672002 #110516]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:06:55.674564 #110516]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:06:55.674963 #110516]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:06:55.675512 #110516]  INFO -- : Error splitting PDF: Split page 2 is out of range. Total pages: 2
+I, [2025-03-26T12:06:55.676133 #110516]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:06:55.677556 #110516]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:06:55.677825 #110516]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:06:55.679000 #110516]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:06:55.679258 #110516]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:06:55.680311 #110516]  INFO -- : Error encrypting PDF: undefined method `security' for #<HexaPDF::Document:0x0056445171e5d0>
+I, [2025-03-26T12:06:55.681299 #110516]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:06:55.682104 #110516]  INFO -- : Error replacing text: undefined method `text' for #<HexaPDF::Type::Page:0x005644516e0758>
+I, [2025-03-26T12:06:55.682685 #110516]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:06:55.683967 #110516]  INFO -- : Error converting PDF to images: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+I, [2025-03-26T12:10:15.661238 #112859]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:10:15.684030 #112859]  INFO -- : Text added successfully.
+I, [2025-03-26T12:10:15.684764 #112859]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:10:15.688472 #112859]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:10:15.688809 #112859]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:10:15.692166 #112859]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:10:15.692494 #112859]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:10:15.709967 #112859]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:10:15.710542 #112859]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:15.715940 #112859]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:10:15.716438 #112859]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:15.733738 #112859]  INFO -- : Text redacted successfully.
+I, [2025-03-26T12:10:15.734164 #112859]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:15.737911 #112859]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:10:15.738361 #112859]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:10:15.740775 #112859]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:10:15.741134 #112859]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:15.742251 #112859]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:10:15.742585 #112859]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:10:15.743841 #112859]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:10:15.744186 #112859]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:15.749340 #112859]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:10:15.749751 #112859]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:10:15.751859 #112859]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:10:15.752165 #112859]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:10:15.752587 #112859]  INFO -- : Error splitting PDF: Split page 2 is out of range. Total pages: 2
+I, [2025-03-26T12:10:15.760920 #112859]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:15.762246 #112859]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:10:15.762637 #112859]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:10:15.763945 #112859]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:10:15.764291 #112859]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:10:15.765344 #112859]  INFO -- : Error encrypting PDF: undefined method `security' for #<HexaPDF::Document:0x0055c475375f70>
+I, [2025-03-26T12:10:15.766308 #112859]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:15.767155 #112859]  INFO -- : Error replacing text: undefined method `text' for #<HexaPDF::Type::Page:0x0055c4752cd758>
+I, [2025-03-26T12:10:15.767836 #112859]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:10:15.769099 #112859]  INFO -- : Error converting PDF to images: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+I, [2025-03-26T12:10:28.093488 #113079]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:10:28.110736 #113079]  INFO -- : Text added successfully.
+I, [2025-03-26T12:10:28.111339 #113079]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:10:28.115664 #113079]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:10:28.116173 #113079]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:10:28.120072 #113079]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:10:28.120532 #113079]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:10:28.137173 #113079]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:10:28.137556 #113079]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:28.140368 #113079]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:10:28.140725 #113079]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:28.160042 #113079]  INFO -- : Text redacted successfully.
+I, [2025-03-26T12:10:28.160448 #113079]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:28.164011 #113079]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:10:28.164488 #113079]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:10:28.167007 #113079]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:10:28.167344 #113079]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:28.168436 #113079]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:10:28.168728 #113079]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:10:28.170187 #113079]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:10:28.170574 #113079]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:28.176181 #113079]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:10:28.176642 #113079]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:10:28.178984 #113079]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:10:28.179389 #113079]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:10:28.179808 #113079]  INFO -- : Error splitting PDF: Split page 2 is out of range. Total pages: 2
+I, [2025-03-26T12:10:28.187838 #113079]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:28.189351 #113079]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:10:28.189890 #113079]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:10:28.191986 #113079]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:10:28.192384 #113079]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:10:28.193640 #113079]  INFO -- : Error encrypting PDF: undefined method `security' for #<HexaPDF::Document:0x00561bb0be6500>
+I, [2025-03-26T12:10:28.194642 #113079]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:10:28.195487 #113079]  INFO -- : Error replacing text: undefined method `text' for #<HexaPDF::Type::Page:0x00561bb08fd0c8>
+I, [2025-03-26T12:10:28.196070 #113079]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:10:28.197394 #113079]  INFO -- : Error converting PDF to images: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+I, [2025-03-26T12:25:16.182072 #123316]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:25:16.205012 #123316]  INFO -- : Text added successfully.
+I, [2025-03-26T12:25:16.205642 #123316]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:25:16.209280 #123316]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:25:16.209603 #123316]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:25:16.212739 #123316]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:25:16.213018 #123316]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:25:16.230337 #123316]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:25:16.230790 #123316]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:25:16.235683 #123316]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:25:16.236120 #123316]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:25:16.253603 #123316]  INFO -- : Text redacted successfully.
+I, [2025-03-26T12:25:16.253977 #123316]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:25:16.257911 #123316]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:25:16.258393 #123316]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:25:16.260960 #123316]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:25:16.261300 #123316]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:25:16.262374 #123316]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:25:16.262652 #123316]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:25:16.264095 #123316]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:25:16.264364 #123316]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:25:16.270011 #123316]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:25:16.270427 #123316]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:25:16.272554 #123316]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:25:16.272825 #123316]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:25:16.276064 #123316]  INFO -- : PDF split successfully into public/uploads/sample_part1_1742972116.pdf and public/uploads/sample_part2_1742972116.pdf
+I, [2025-03-26T12:25:16.276452 #123316]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:25:16.278064 #123316]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:25:16.278580 #123316]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:25:16.279975 #123316]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:25:16.280265 #123316]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:25:16.292013 #123316]  INFO -- : PDF encrypted successfully: spec/fixtures/output.pdf
+I, [2025-03-26T12:25:16.292373 #123316]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:25:16.293368 #123316]  INFO -- : Error replacing text: undefined method `text' for #<HexaPDF::Type::Page:0x00562b5a98cb60>
+I, [2025-03-26T12:25:16.304456 #123316]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:25:16.306001 #123316]  INFO -- : Error converting PDF to images: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+I, [2025-03-26T12:26:41.211033 #124301]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:26:41.232736 #124301]  INFO -- : Text added successfully.
+I, [2025-03-26T12:26:41.233300 #124301]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:26:41.237034 #124301]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:26:41.237813 #124301]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:26:41.241379 #124301]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:26:41.241747 #124301]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:26:41.258563 #124301]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:26:41.258986 #124301]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:26:41.264100 #124301]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:26:41.264723 #124301]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:26:41.283761 #124301]  INFO -- : Text redacted successfully.
+I, [2025-03-26T12:26:41.284150 #124301]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:26:41.288193 #124301]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:26:41.288646 #124301]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:26:41.291377 #124301]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:26:41.291643 #124301]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:26:41.292709 #124301]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:26:41.292964 #124301]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:26:41.294283 #124301]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:26:41.294704 #124301]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:26:41.300255 #124301]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:26:41.300876 #124301]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:26:41.303242 #124301]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:26:41.303682 #124301]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:26:41.307273 #124301]  INFO -- : PDF split successfully into public/uploads/sample_part1_1742972201.pdf and public/uploads/sample_part2_1742972201.pdf
+I, [2025-03-26T12:26:41.308015 #124301]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:26:41.309262 #124301]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:26:41.309681 #124301]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:26:41.310935 #124301]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:26:41.311272 #124301]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:26:41.318525 #124301]  INFO -- : PDF encrypted successfully: spec/fixtures/output.pdf
+I, [2025-03-26T12:26:41.318947 #124301]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:26:41.319798 #124301]  INFO -- : Error replacing text: undefined method `texts' for #<HexaPDF::Type::Page:0x0055d4bd4ef8d0>
+I, [2025-03-26T12:26:41.329161 #124301]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:26:41.330607 #124301]  INFO -- : Error converting PDF to images: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+I, [2025-03-26T12:30:20.289801 #126851]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:30:20.312772 #126851]  INFO -- : Text added successfully.
+I, [2025-03-26T12:30:20.313331 #126851]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:30:20.316677 #126851]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:30:20.316999 #126851]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:30:20.320200 #126851]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:30:20.320502 #126851]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:30:20.339622 #126851]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:30:20.340158 #126851]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:20.347640 #126851]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:30:20.348257 #126851]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:20.366118 #126851]  INFO -- : Text redacted successfully.
+I, [2025-03-26T12:30:20.366543 #126851]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:20.370076 #126851]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:30:20.370540 #126851]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:30:20.373201 #126851]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:30:20.373715 #126851]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:20.374895 #126851]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:30:20.375403 #126851]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:30:20.376803 #126851]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:30:20.377078 #126851]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:20.381690 #126851]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:30:20.382008 #126851]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:30:20.384333 #126851]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:30:20.384667 #126851]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:30:20.388083 #126851]  INFO -- : PDF split successfully into public/uploads/sample_part1_1742972420.pdf and public/uploads/sample_part2_1742972420.pdf
+I, [2025-03-26T12:30:20.397722 #126851]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:30:20.399130 #126851]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:30:20.399421 #126851]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:30:20.408365 #126851]  INFO -- : PDF encrypted successfully: spec/fixtures/output.pdf
+I, [2025-03-26T12:30:20.408802 #126851]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:20.409710 #126851]  INFO -- : Error replacing text: undefined method `texts' for #<HexaPDF::Type::Page:0x0055ad6532c6f8>
+I, [2025-03-26T12:30:20.410338 #126851]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:30:20.411654 #126851]  INFO -- : Error converting PDF to images: undefined method `density=' for PdfMaster::Modify:Class
+I, [2025-03-26T12:30:39.411514 #127099]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:30:39.435306 #127099]  INFO -- : Text added successfully.
+I, [2025-03-26T12:30:39.435812 #127099]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:30:39.439354 #127099]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:30:39.439650 #127099]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:30:39.443315 #127099]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:30:39.443667 #127099]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:30:39.460127 #127099]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:30:39.460554 #127099]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:39.464057 #127099]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:30:39.464748 #127099]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:39.484625 #127099]  INFO -- : Text redacted successfully.
+I, [2025-03-26T12:30:39.485019 #127099]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:39.489494 #127099]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:30:39.489945 #127099]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:30:39.492425 #127099]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:30:39.492760 #127099]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:39.493845 #127099]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:30:39.494114 #127099]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:30:39.495883 #127099]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:30:39.496449 #127099]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:39.501250 #127099]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:30:39.501650 #127099]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:30:39.503714 #127099]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:30:39.503971 #127099]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:30:39.507277 #127099]  INFO -- : PDF split successfully into public/uploads/sample_part1_1742972439.pdf and public/uploads/sample_part2_1742972439.pdf
+I, [2025-03-26T12:30:39.507624 #127099]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:39.508919 #127099]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:30:39.509343 #127099]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:30:39.510727 #127099]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:30:39.511142 #127099]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:30:39.518877 #127099]  INFO -- : PDF encrypted successfully: spec/fixtures/output.pdf
+I, [2025-03-26T12:30:39.519225 #127099]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:30:39.520129 #127099]  INFO -- : Error replacing text: undefined method `texts' for #<HexaPDF::Type::Page:0x0055c0e9e623c8>
+I, [2025-03-26T12:30:39.529150 #127099]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:30:39.530647 #127099]  INFO -- : Error converting PDF to images: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+I, [2025-03-26T12:33:17.680188 #129086]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:33:17.702725 #129086]  INFO -- : Text added successfully.
+I, [2025-03-26T12:33:17.703378 #129086]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:33:17.707248 #129086]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:33:17.707633 #129086]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:33:17.711309 #129086]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:33:17.711853 #129086]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:33:17.728766 #129086]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:33:17.729285 #129086]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:33:17.732937 #129086]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:33:17.733660 #129086]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:33:17.752118 #129086]  INFO -- : Text redacted successfully.
+I, [2025-03-26T12:33:17.752501 #129086]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:33:17.757341 #129086]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:33:17.757864 #129086]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:33:17.760521 #129086]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:33:17.760833 #129086]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:33:17.761901 #129086]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:33:17.762192 #129086]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:33:17.763687 #129086]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:33:17.764153 #129086]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:33:17.768916 #129086]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:33:17.769345 #129086]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:33:17.771465 #129086]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:33:17.771830 #129086]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:33:17.775289 #129086]  INFO -- : PDF split successfully into public/uploads/sample_part1_1742972597.pdf and public/uploads/sample_part2_1742972597.pdf
+I, [2025-03-26T12:33:17.775657 #129086]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:33:17.776962 #129086]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:33:17.777473 #129086]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:33:17.778816 #129086]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:33:17.779165 #129086]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:33:17.787471 #129086]  INFO -- : PDF encrypted successfully: spec/fixtures/output.pdf
+I, [2025-03-26T12:33:17.787880 #129086]  INFO -- : Replacing 'Sample' with 'Replaced' in spec/fixtures/sample.pdf
+I, [2025-03-26T12:33:17.788744 #129086]  INFO -- : Error replacing text: undefined method `texts' for #<HexaPDF::Type::Page:0x0055a941677c40>
+I, [2025-03-26T12:33:17.797372 #129086]  INFO -- : Converting spec/fixtures/sample.pdf to images
+I, [2025-03-26T12:33:17.798714 #129086]  INFO -- : Error converting PDF to images: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+I, [2025-03-26T12:42:44.518057 #135702]  INFO -- : Adding text to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:42:44.534601 #135702]  INFO -- : Text added successfully.
+I, [2025-03-26T12:42:44.535251 #135702]  INFO -- : Adding image 'spec/fixtures/sample_image.png' to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:42:44.541008 #135702]  INFO -- : Image 'spec/fixtures/sample_image.png' added successfully.
+I, [2025-03-26T12:42:44.541569 #135702]  INFO -- : Adding watermark to spec/fixtures/sample.pdf on page 1
+I, [2025-03-26T12:42:44.544918 #135702]  INFO -- : Watermark added successfully.
+I, [2025-03-26T12:42:44.545254 #135702]  INFO -- : Adding annotation to spec/fixtures/sample.pdf on page 2
+I, [2025-03-26T12:42:44.561776 #135702]  INFO -- : Annotation added successfully.
+I, [2025-03-26T12:42:44.562206 #135702]  INFO -- : Adding hyperlink to spec/fixtures/sample.pdf
+I, [2025-03-26T12:42:44.565209 #135702]  INFO -- : Hyperlink added successfully.
+I, [2025-03-26T12:42:44.565527 #135702]  INFO -- : Redacting text in spec/fixtures/sample.pdf
+I, [2025-03-26T12:42:44.584564 #135702]  INFO -- : Text redacted successfully.
+I, [2025-03-26T12:42:44.584970 #135702]  INFO -- : Adding header and footer to spec/fixtures/sample.pdf
+I, [2025-03-26T12:42:44.588272 #135702]  INFO -- : Header and footer added successfully.
+I, [2025-03-26T12:42:44.588661 #135702]  INFO -- : Adding blank page to spec/fixtures/sample.pdf at position 2
+I, [2025-03-26T12:42:44.591205 #135702]  INFO -- : Blank page added successfully.
+I, [2025-03-26T12:42:44.591526 #135702]  INFO -- : Removing page 1 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:42:44.592585 #135702]  INFO -- : Page 1 removed successfully.
+I, [2025-03-26T12:42:44.592907 #135702]  INFO -- : Rotating page 1 of spec/fixtures/sample.pdf by 90 degrees
+I, [2025-03-26T12:42:44.594310 #135702]  INFO -- : Page rotated successfully.
+I, [2025-03-26T12:42:44.594660 #135702]  INFO -- : Duplicating page 1 of spec/fixtures/sample.pdf
+I, [2025-03-26T12:42:44.599110 #135702]  INFO -- : Page duplicated successfully.
+I, [2025-03-26T12:42:44.599556 #135702]  INFO -- : Merging PDFs into spec/fixtures/output.pdf: spec/fixtures/sample.pdf, spec/fixtures/sample2.pdf
+I, [2025-03-26T12:42:44.602358 #135702]  INFO -- : PDFs merged successfully into spec/fixtures/output.pdf.
+I, [2025-03-26T12:42:44.602759 #135702]  INFO -- : Splitting spec/fixtures/sample.pdf at page 2
+I, [2025-03-26T12:42:44.606591 #135702]  INFO -- : PDF split successfully into public/uploads/sample_part1_1742973164.pdf and public/uploads/sample_part2_1742973164.pdf
+I, [2025-03-26T12:42:44.606945 #135702]  INFO -- : Extracting pages 1, 2 from spec/fixtures/sample.pdf
+I, [2025-03-26T12:42:44.608218 #135702]  INFO -- : Pages extracted successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:42:44.608533 #135702]  INFO -- : Rearranging pages in spec/fixtures/sample.pdf to new order: 2, 1
+I, [2025-03-26T12:42:44.609784 #135702]  INFO -- : Pages rearranged successfully into spec/fixtures/output.pdf
+I, [2025-03-26T12:42:44.610090 #135702]  INFO -- : Encrypting spec/fixtures/sample.pdf with a password
+I, [2025-03-26T12:42:44.617415 #135702]  INFO -- : PDF encrypted successfully: spec/fixtures/output.pdf
