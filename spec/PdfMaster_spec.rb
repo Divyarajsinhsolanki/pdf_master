@@ -107,5 +107,25 @@ RSpec.describe PdfMaster do
     it 'crops a page in a PDF' do
       expect { PdfMaster::Modify.crop_page(sample_pdf, 1, 50, 50, 200, 200) }.not_to raise_error
     end
+
+    it 'adds page numbers to a PDF' do
+      expect { PdfMaster::Modify.add_page_numbers(sample_pdf) }.not_to raise_error
+    end
+
+    it 'updates metadata in a PDF' do
+      expect { PdfMaster::Modify.update_metadata(sample_pdf, title: 'Title') }.not_to raise_error
+    end
+
+    it 'removes metadata from a PDF' do
+      expect { PdfMaster::Modify.remove_metadata(sample_pdf) }.not_to raise_error
+    end
+
+    it 'flattens form fields in a PDF' do
+      expect { PdfMaster::Modify.flatten_form_fields(sample_pdf) }.not_to raise_error
+    end
+
+    it 'changes orientation of a PDF' do
+      expect { PdfMaster::Modify.change_orientation(sample_pdf, :landscape) }.not_to raise_error
+    end
   end
 end

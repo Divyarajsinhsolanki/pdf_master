@@ -217,6 +217,36 @@ PdfMaster::Modify.compress_pdf('input.pdf', 'compressed.pdf')
 PdfMaster::Modify.crop_page('input.pdf', 1, 50, 50, 400, 500)
 ```
 
+### Adding Page Numbers
+
+```ruby
+PdfMaster::Modify.add_page_numbers('input.pdf')
+```
+
+### Updating PDF Metadata
+
+```ruby
+PdfMaster::Modify.update_metadata('input.pdf', title: 'My Title', author: 'Me')
+```
+
+### Removing Metadata
+
+```ruby
+PdfMaster::Modify.remove_metadata('input.pdf')
+```
+
+### Flattening Form Fields
+
+```ruby
+PdfMaster::Modify.flatten_form_fields('input.pdf')
+```
+
+### Changing Page Orientation
+
+```ruby
+PdfMaster::Modify.change_orientation('input.pdf', :landscape)
+```
+
 ## Running Tests
 
 To run the test suite, execute:

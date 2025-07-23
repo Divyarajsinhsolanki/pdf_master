@@ -318,6 +318,89 @@ module PdfMaster
         raise
       end
 
+      def add_page_numbers(input_pdf, start_number = 1, font_settings = {})
+        Logger.log("Adding page numbers to #{input_pdf}")
+
+        doc = CombinePDF.load(input_pdf)
+        doc.pages.each_with_index do |page, index|
+          number = start_number + index
+          width  = page.mediabox[2]
+          height = page.mediabox[3]
+          temp_pdf = File.join(Utilities::UPLOADS_DIR, "temp_pn_#{index}.pdf")
+
+          Base.generate_overlay_pdf(temp_pdf) do |pdf|
+            Base.apply_font(pdf, font_settings)
+            x, y = Base.calculate_position('bottom_center', width, height)
+            pdf.draw_text number.to_s, at: [x, y]
+          end
+
+          page << CombinePDF.load(temp_pdf).pages.first
+          File.delete(temp_pdf) if File.exist?(temp_pdf)
+        end
+
+        doc.save(input_pdf)
+        Logger.log('Page numbers added successfully.')
+      rescue => e
+        Logger.log("Error adding page numbers: #{e.message}")
+        raise
+      end
+
+      def update_metadata(input_pdf, metadata = {})
+        Logger.log("Updating metadata for #{input_pdf}")
+
+        doc = HexaPDF::Document.open(input_pdf)
+        info = doc.trailer.info
+        metadata.each { |key, value| info[key.to_sym] = value }
+        doc.write(input_pdf, optimize: true)
+
+        Logger.log('Metadata updated successfully.')
+      rescue => e
+        Logger.log("Error updating metadata: #{e.message}")
+        raise
+      end
+
+      def remove_metadata(input_pdf)
+        Logger.log("Removing metadata from #{input_pdf}")
+
+        doc = HexaPDF::Document.open(input_pdf)
+        doc.trailer.info.clear
+        doc.write(input_pdf, optimize: true)
+
+        Logger.log('Metadata removed successfully.')
+      rescue => e
+        Logger.log("Error removing metadata: #{e.message}")
+        raise
+      end
+
+      def flatten_form_fields(input_pdf)
+        Logger.log("Flattening form fields in #{input_pdf}")
+
+        doc = HexaPDF::Document.open(input_pdf)
+        doc.acro_form&.form_fields&.each(&:flatten)
+        doc.write(input_pdf, optimize: true)
+
+        Logger.log('Form fields flattened successfully.')
+      rescue => e
+        Logger.log("Error flattening form fields: #{e.message}")
+        raise
+      end
+
+      def change_orientation(input_pdf, orientation = :portrait)
+        Logger.log("Changing orientation of #{input_pdf} to #{orientation}")
+
+        rotate = orientation.to_sym == :landscape ? 90 : 0
+        doc = HexaPDF::Document.open(input_pdf)
+        doc.pages.each do |page|
+          page[:Rotate] = rotate
+        end
+        doc.write(input_pdf, optimize: true)
+
+        Logger.log('Orientation changed successfully.')
+      rescue => e
+        Logger.log("Error changing orientation: #{e.message}")
+        raise
+      end
+
       private
 
       def self.move_pages(pages, indices, direction)
