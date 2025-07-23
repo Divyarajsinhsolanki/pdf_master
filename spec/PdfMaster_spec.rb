@@ -99,5 +99,13 @@ RSpec.describe PdfMaster do
     it 'encrypts a PDF with a password' do
       expect { PdfMaster::Modify.encrypt_pdf(sample_pdf, output_pdf, 'password123') }.not_to raise_error
     end
+
+    it 'compresses a PDF' do
+      expect { PdfMaster::Modify.compress_pdf(sample_pdf, output_pdf) }.not_to raise_error
+    end
+
+    it 'crops a page in a PDF' do
+      expect { PdfMaster::Modify.crop_page(sample_pdf, 1, 50, 50, 200, 200) }.not_to raise_error
+    end
   end
 end
