@@ -205,6 +205,18 @@ PdfMaster::Modify.split_pdf('input.pdf', 1)
 PdfMaster::Modify.encrypt_pdf('input.pdf', 'output.pdf', 'password123')
 ```
 
+### Compressing a PDF
+
+```ruby
+PdfMaster::Modify.compress_pdf('input.pdf', 'compressed.pdf')
+```
+
+### Cropping a Page
+
+```ruby
+PdfMaster::Modify.crop_page('input.pdf', 1, 50, 50, 400, 500)
+```
+
 ## Running Tests
 
 To run the test suite, execute:

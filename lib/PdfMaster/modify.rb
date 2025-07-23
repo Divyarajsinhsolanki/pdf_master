@@ -276,14 +276,43 @@ module PdfMaster
 
       def encrypt_pdf(input_pdf, output_pdf, password)
         Logger.log("Encrypting #{input_pdf} with a password")
-        
+
         doc = HexaPDF::Document.open(input_pdf)
         doc.encrypt(:owner_password => password, :user_password => password)
         doc.write(output_pdf)
-        
+
         Logger.log("PDF encrypted successfully: #{output_pdf}")
       rescue => e
         Logger.log("Error encrypting PDF: #{e.message}")
+        raise
+      end
+
+      def compress_pdf(input_pdf, output_pdf = input_pdf)
+        Logger.log("Compressing #{input_pdf}")
+
+        doc = HexaPDF::Document.open(input_pdf)
+        doc.write(output_pdf, optimize: true)
+
+        Logger.log("PDF compressed successfully: #{output_pdf}")
+      rescue => e
+        Logger.log("Error compressing PDF: #{e.message}")
+        raise
+      end
+
+      def crop_page(input_pdf, page_number, left, bottom, width, height)
+        Logger.log("Cropping page #{page_number} of #{input_pdf}")
+
+        doc = HexaPDF::Document.open(input_pdf)
+        raise ArgumentError, "Invalid page number" unless page_number.between?(1, doc.pages.count)
+
+        right  = left + width
+        top    = bottom + height
+        doc.pages[page_number - 1].box(:crop, [left, bottom, right, top])
+        doc.write(input_pdf, optimize: true)
+
+        Logger.log("Page cropped successfully.")
+      rescue => e
+        Logger.log("Error cropping page: #{e.message}")
         raise
       end
 
