@@ -1,3 +1,5 @@
+require 'fileutils'
+
 module PdfMaster
   module Utilities
     UPLOADS_DIR = 'public/uploads'.freeze

@@ -73,7 +73,7 @@ RSpec.describe PdfMaster do
     end
 
     it 'rotates a page in a PDF' do
-      expect { PdfMaster::Modify.rotate_page(sample_pdf, 1, 90) }.not_to raise_error
+      expect { PdfMaster::Modify.rotate_page(sample_pdf, 90, 1) }.not_to raise_error
     end
 
     it 'duplicates a page in a PDF' do

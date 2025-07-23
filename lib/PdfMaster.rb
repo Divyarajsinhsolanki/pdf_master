@@ -16,11 +16,11 @@ require_relative 'PdfMaster/editor'
 require_relative 'PdfMaster/converter'
 
 module PdfMaster
-  # class Error < Standard8Error; end
+  # Custom errors live under PdfMaster::Errors
   include PdfMaster::Errors
 
   def self.method_missing(method_name, *args, &block)
-    puts "Calling: #{method_name} with arguments: #{args.inspect}"
+    Logger.log("Calling: #{method_name} with arguments: #{args.inspect}")
 
     Validator.validate_pdf(args.first) if args.any?
 
