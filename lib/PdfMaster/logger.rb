@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 require 'logger'
 
 module PdfMaster
   class Logger
     def self.instance
-      @logger ||= begin
+      @loggers ||= begin
         file_logger = ::Logger.new(File.join(Dir.pwd, 'pdf_master.log'), 'daily')
         file_logger.level = ::Logger::INFO
-        
+
         console_logger = ::Logger.new(STDOUT)
         console_logger.level = ::Logger::INFO
 
-        [file_logger, console_logger]
+        [file_logger, console_logger].freeze
       end
     end
 

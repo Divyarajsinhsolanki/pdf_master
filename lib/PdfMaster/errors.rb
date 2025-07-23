@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PdfMaster
   module Errors
     class PdfError < StandardError; end

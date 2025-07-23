@@ -1,17 +1,19 @@
-require "hexapdf"
-require "combine_pdf"
-require "prawn"
+# frozen_string_literal: true
+
+require 'hexapdf'
+require 'combine_pdf'
+require 'prawn'
 require 'mini_magick'
 require 'shellwords'
-require "pdfkit"
+require 'pdfkit'
 
-require_relative "PdfMaster/version"
+require_relative 'PdfMaster/version'
 require_relative 'PdfMaster/errors'
-require_relative "PdfMaster/validator"
+require_relative 'PdfMaster/validator'
 require_relative 'PdfMaster/logger'
 require_relative 'PdfMaster/base'
 
-require_relative "PdfMaster/modify"
+require_relative 'PdfMaster/modify'
 require_relative 'PdfMaster/editor'
 require_relative 'PdfMaster/converter'
 

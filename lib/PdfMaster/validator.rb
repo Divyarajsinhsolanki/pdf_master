@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PdfMaster
   class Validator
     def self.validate_pdf(pdf_path)
