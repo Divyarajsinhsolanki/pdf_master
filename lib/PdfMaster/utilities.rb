@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'fileutils'
 
 module PdfMaster
@@ -31,10 +33,11 @@ module PdfMaster
     end
 
     def calculate_position(position, width, height, x = nil, y = nil)
-      return POSITIONS[position].call(width, height) if position && POSITIONS.key?(position)
-      return [x, y] if x && y # Use custom coordinates
+      pos_key = position&.to_s
+      return POSITIONS[pos_key].call(width, height) if pos_key && POSITIONS.key?(pos_key)
+      return [x, y] if x && y
 
-      [0, 0] # Default to (0,0) if nothing is provided
+      [0, 0]
     end
   end
 end

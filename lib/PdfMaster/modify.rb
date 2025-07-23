@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'logger'
 
 module PdfMaster
@@ -251,7 +253,7 @@ module PdfMaster
         move_last: ->(pages, *indices) { move_pages(pages, indices, :last) },
         swap: ->(pages, index1, index2) { pages[index1 - 1], pages[index2 - 1] = pages[index2 - 1], pages[index1 - 1] },
         move_to: ->(pages, from, to) { pages.insert(to - 1, pages.delete_at(from - 1)) }
-      }
+      }.freeze
 
       def rearrange_pages(input_pdf, action, *args)
         Logger.log("Rearranging pages in #{input_pdf} using action: #{action} with args: #{args}")
