@@ -4,10 +4,11 @@ module PdfMaster
 
       def image_to_pdf(image_paths, output_pdf)
         Logger.log("Converting images #{image_paths} to PDF: #{output_pdf}")
+        images = Array(image_paths)
         pdf = Prawn::Document.new
-        Array(image_paths).each do |image|
+        images.each_with_index do |image, index|
           pdf.image image, fit: [500, 700]
-          pdf.start_new_page unless image == image_paths.last
+          pdf.start_new_page unless index == images.length - 1
         end
         pdf.render_file(output_pdf)
         Logger.log("Image to PDF conversion completed: #{output_pdf}")

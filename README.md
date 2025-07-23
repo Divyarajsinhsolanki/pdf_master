@@ -166,7 +166,7 @@ PdfMaster::Modify.remove_page('input.pdf', 1)
 ### Rotating a Page
 
 ```ruby
-PdfMaster::Modify.rotate_page('input.pdf', 1, 90)
+PdfMaster::Modify.rotate_page('input.pdf', 90, 1)
 ```
 
 ### Duplicating a Page
