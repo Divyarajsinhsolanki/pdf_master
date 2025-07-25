@@ -26,14 +26,18 @@ module PdfMaster
         output_prefix = File.join(output_folder, "page")
         command = "pdftoppm -png #{Shellwords.escape(input_pdf)} #{Shellwords.escape(output_prefix)}"
 
-        # Execute the command
+        unless system('which pdftoppm > /dev/null 2>&1')
+          Logger.log('pdftoppm not found in PATH')
+          raise 'pdftoppm command is required for PDF to image conversion'
+        end
+
         success = system(command)
 
         if success
           Logger.log("Successfully converted PDF pages to images in #{output_folder}")
         else
-          Logger.log("Error converting PDF to images.")
-          raise "PDF to Image conversion failed."
+          Logger.log('Error converting PDF to images.')
+          raise 'PDF to Image conversion failed.'
         end
       end
 
