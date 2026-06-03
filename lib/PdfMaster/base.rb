@@ -7,8 +7,8 @@ module PdfMaster
     extend Utilities
 
     class << self
-      def generate_overlay_pdf(temp_pdf, &block)
-        Prawn::Document.generate(temp_pdf, page_size: 'A4') do |pdf|
+      def generate_overlay_pdf(temp_pdf, page_size: 'A4', &block)
+        Prawn::Document.generate(temp_pdf, page_size: page_size) do |pdf|
           block.call(pdf)
         end
       end
@@ -27,7 +27,13 @@ module PdfMaster
 
         original_pdf = CombinePDF.load(pdf_path)
         target_page = original_pdf.pages[page - 1]
-        yield(target_page, temp_pdf) if block_given?
+        
+        # Detect page size from mediabox
+        width = target_page.mediabox[2] - target_page.mediabox[0]
+        height = target_page.mediabox[3] - target_page.mediabox[1]
+        page_size = [width, height]
+
+        yield(target_page, temp_pdf, page_size) if block_given?
         merge_and_save(original_pdf, target_page, temp_pdf, output_path)
         output_path
       end

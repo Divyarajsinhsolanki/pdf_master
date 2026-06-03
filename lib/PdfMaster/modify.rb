@@ -92,8 +92,9 @@ module PdfMaster
         valid_positions = page_numbers.select { |pos| pos.between?(1, max_pages) }
       
         valid_positions.each do |page_number|
-          current_rotation = @pdf_pages[page_number - 1][:Rotate].to_i
-          @pdf_pages[page_number - 1][:Rotate] = (current_rotation + degrees) % 360
+          page = @pdf_pages[page_number - 1]
+          current_rotation = (page[:Rotate] || 0).to_i
+          page[:Rotate] = (current_rotation + degrees) % 360
         end
       
         save_pdf(input_pdf)
@@ -404,16 +405,25 @@ module PdfMaster
       private
 
       def self.move_pages(pages, indices, direction)
-        indices = indices.map { |i| i - 1 }.sort
-        indices.reverse! if direction == :last || direction == +1
-  
-        indices.each do |index|
-          case direction
-          when -1  then pages.insert([index - 1, 0].max, pages.delete_at(index))  # Move Up
-          when +1  then pages.insert([index + 1, pages.size - 1].min, pages.delete_at(index))  # Move Down
-          when :first then pages.unshift(pages.delete_at(index))  # Move First
-          when :last  then pages.push(pages.delete_at(index))  # Move Last
-          end
+        # Convert to 0-based indices and sort them to keep extraction predictable
+        target_indices = indices.map { |i| i - 1 }.sort
+        
+        # Extract the pages to be moved
+        moved_pages = target_indices.reverse.map { |i| pages.delete_at(i) }.reverse
+        
+        case direction
+        when -1 # Move Up
+          # Find the new insertion point based on the first selected page
+          new_pos = [target_indices.first - 1, 0].max
+          pages.insert(new_pos, *moved_pages)
+        when +1 # Move Down
+          # New pos is after the last selected page's original position (shifted by deletion)
+          new_pos = [target_indices.first + 1, pages.size].min
+          pages.insert(new_pos, *moved_pages)
+        when :first
+          pages.unshift(*moved_pages)
+        when :last
+          pages.push(*moved_pages)
         end
       end
     end
