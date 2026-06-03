@@ -152,7 +152,11 @@ module PdfMaster
         process_pdf(pdf_path, 'hyperlink', page) do |target_page, temp_pdf|
           generate_overlay_pdf(temp_pdf) do |pdf|
             apply_font(pdf, font_settings)  # Apply custom or default font settings
-            pdf.text_box link_text, at: [x, y], size: 12, link: url, underline: true, color: '0000FF'
+            pdf.formatted_text_box(
+              [{ text: link_text, styles: [:underline], color: '0000FF', link: url }],
+              at: [x, y],
+              size: 12
+            )
           end
         end
         Logger.log("Hyperlink added successfully.")
