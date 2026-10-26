@@ -275,3 +275,9 @@ The earlier README claimed MIT licensing, but this checkout contains no licence 
 
 Everyone interacting in the PdfMaster project’s codebases, issue trackers, chat rooms, and mailing lists is expected to follow the [code of conduct](https://github.com/Atharva-System/PdfMaster/blob/master/CODE_OF_CONDUCT.md).
 
+
+## CI baseline — 2026-10-26
+
+The workflow runs all 26 RSpec examples; 3 fail: page duplication imports a page from the same document, encryption requests unsupported legacy RC4 under OpenSSL 3, and metadata removal calls an unsupported `clear` method. These implementation/compatibility failures remain visible and are not skipped.
+
+[Inspected test run](https://github.com/Divyarajsinhsolanki/pdf_master/actions/runs/40307447164). Adding CI does not imply these legacy projects are production-ready.
