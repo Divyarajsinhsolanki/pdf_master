@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    PdfMaster (0.1.0)
+    PdfMaster (0.2.1)
       combine_pdf (= 1.0.25)
       hexapdf (~> 0.16)
       mini_magick (~> 4.11)
