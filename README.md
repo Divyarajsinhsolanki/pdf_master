@@ -1,6 +1,12 @@
 # PdfMaster
 
+![Tests](https://github.com/Divyarajsinhsolanki/pdf_master/actions/workflows/tests.yml/badge.svg)
+
 PdfMaster is a Ruby gem that provides various utilities for manipulating PDFs, including adding text and images, modifying pages, adding annotations, handling form fields, applying watermarks, merging/splitting PDFs, and encrypting files.
+
+## Requirements
+
+Ruby 3.3 or later; the lockfile uses Bundler 2.6.6. For a source checkout, run `gem install bundler -v 2.6.6`, `bundle _2.6.6_ install`, then `bundle exec rspec`.
 
 ## Installation
 
@@ -255,7 +261,7 @@ To run the test suite, execute:
 bundle exec rspec
 ```
 
-This will create a git tag for the version, push git commits and tags, and push the .gem file to [rubygems.org](https://rubygems.org).
+This command runs RSpec tests only. It does not create tags, push commits, or publish a gem. GitHub Actions runs the same suite on pushes and pull requests using Ruby 3.3. Publishing is a separate, manual process.
 
 ## Contributing
 
@@ -263,7 +269,7 @@ Bug reports and pull requests are welcome on GitHub at [pdf-master repository](h
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The earlier README claimed MIT licensing, but this checkout contains no licence text and its gemspec declares no licence. That claim is unverified. See [LICENSING.md](LICENSING.md) for upstream attribution and the outstanding licence confirmation; do not assume permission to redistribute.
 
 ## Code of Conduct
 
